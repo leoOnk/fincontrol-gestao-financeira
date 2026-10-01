@@ -1,0 +1,262 @@
+/* --- CONFIGURAÇÃO DA ESTRUTURA GERAL (GRID/FLEX) --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.app-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* --- BARRA LATERAL (SIDEBAR CORPORATIVA) --- */
+.sidebar {
+    background-color: var(--bg-sidebar);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    height: 100vh;
+}
+
+.sidebar-brand {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1e293b;
+}
+
+.sidebar-brand h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-revenue);
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-brand span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.nav-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 1.25rem 0 0.5rem 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.nav-link:hover {
+    background-color: #1e293b;
+    color: var(--white);
+}
+
+.nav-link.active {
+    background-color: var(--color-info);
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.top-bar {
+    background-color: var(--white);
+    height: 70px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    flex-shrink: 0;
+}
+
+.page-title h1 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.user-profile {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.view-container {
+    padding: 2rem;
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--bg-primary);
+}
+
+/* --- GRID DE MÉTRICAS E CARDS COLORIDOS --- */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.card-metric {
+    background-color: var(--white) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    box-shadow: var(--shadow-sm) !important;
+    border-top: 4px solid var(--text-muted) !important;
+}
+
+.card-metric .card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.card-metric strong {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* Identificadores visuais superiores de cada card */
+.card-revenue { border-top-color: var(--color-revenue) !important; }
+.card-expense { border-top-color: var(--color-expense) !important; }
+.card-balance { border-top-color: var(--color-info) !important; }
+.card-overdue { border-top-color: var(--color-warning) !important; }
+
+.finance-panel, .crud-panel, .report-panel {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- ESTILIZAÇÃO DOS FORMULÁRIOS FINANCEIROS E CADASTROS --- */
+.financial-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 600px; /* Limita a largura para o painel ficar elegante */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--white);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-info); /* Borda azul ao clicar no campo */
+}
+
+/* --- CORREÇÃO DEFINITIVA DO BOTÃO DE CADASTROS --- */
+button[type="submit"] {
+    display: block !important;
+    width: fit-content !important;
+    min-width: 160px !important;
+    padding: 0.75rem 1.5rem !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    box-shadow: var(--shadow-sm) !important;
+    text-align: center !important;
+    margin-top: 1.5rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Garante as cores de destaque caso o estilo inline sofra conflitos */
+#form-cadastro-cliente button[type="submit"] {
+    background-color: #3b82f6 !important; /* Força Azul para Clientes */
+    color: #ffffff !important;
+}
+
+#form-cadastro-fornecedor button[type="submit"] {
+    background-color: #0f172a !important; /* Força Escuro para Fornecedores */
+    color: #ffffff !important;
+}
+
+
+.financial-form button[type="submit"]:hover {
+    filter: brightness(0.9); /* Dá um leve tom escuro ao passar o mouse */
+}
+
+.form-error-msg {
+    font-size: 0.8rem;
+    font-weight: 500;
+    min-height: 1rem;
+}

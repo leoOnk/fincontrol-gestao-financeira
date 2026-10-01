@@ -76,5 +76,7 @@ Utilizam o ambiente simulado do **JSDOM** e injeção de payloads controlados no
 ## 📈 Resultados da Esteira de Automação
 
 * **5/5 Suítes de Testes** validadas e executadas em paralelo.
+
 * **12/12 Cenários Críticos de Negócio** aprovados com 100% de aproveitamento verde, assegurando resiliência total contra regressões de código e quebras visuais.
+
 # fincontrol-gestao-financeira

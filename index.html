@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FINCONTROL - Sistema de Gestão Financeira Empresarial">
+    <title>FINCONTROL | Gestão Corporativa</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <!-- BARRA LATERAL DE NAVEGAÇÃO -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>FINCONTROL</h2>
+                <span>Módulo Empresarial</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-link active" data-view="dashboard">📊 Dashboard</button>
+                
+                <div class="nav-category">Financeiro</div>
+                <button class="nav-link" data-view="contas-pagar">📉 Contas a Pagar</button>
+                <button class="nav-link" data-view="contas-receber">📈 Contas a Receber</button>
+                <button class="nav-link" data-view="fluxo-caixa">🔄 Fluxo de Caixa</button>
+                
+                <div class="nav-category">Cadastros</div>
+                <button class="nav-link" data-view="clientes">👥 Clientes</button>
+                <button class="nav-link" data-view="fornecedores">🏢 Fornecedores</button>
+                
+                <div class="nav-category">Relatórios</div>
+                <button class="nav-link" data-view="relatorio-inadimplencia">⚠️ Inadimplência</button>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL DA APLICAÇÃO -->
+        <div class="main-content">
+            
+            <!-- Barra Superior de Usuário -->
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1 id="current-view-title">Dashboard Operacional</h1>
+                </div>
+                <div class="user-profile">
+                    <span>Olá, <strong>ONK Soluções Digitais</strong></span>
+                </div>
+            </header>
+
+            <!-- CONTAINER DINÂMICO (Onde o JavaScript injeta as telas) -->
+            <main id="view-container" class="view-container">
+                <!-- O conteúdo do Dashboard nascerá aqui via main.js -->
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Script Orquestrador Central -->
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
